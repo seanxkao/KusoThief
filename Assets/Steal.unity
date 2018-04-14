@@ -222,63 +222,92 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 403989389}
     m_EventID: 274883418
-  m_CachedInstanceID: 269484
+  m_CachedInstanceID: 22772
   m_Description: 
   m_IgnoreTimeScale: 0
-  m_ResetStatusOnDisable: 1
+  m_ResetStatusOnDisable: 0
   m_EnabledStates: []
   m_NodeSerialization:
     m_NodeTypes:
+    - BehaviourMachine.Awake
+    - BehaviourMachine.FloatMultiply
     - BehaviourMachine.OnEnable
     - BehaviourMachine.AnimatorSetBool
     - BehaviourMachine.Update
-    - BehaviourMachine.OverlapSphere
-    - BehaviourMachine.IsFloatEqual
+    - BehaviourMachine.Selector
     - BehaviourMachine.Sequence
-    - BehaviourMachine.IsKeyDown
+    - Compass.FSM.IsSkillActivated
     - BehaviourMachine.SetActive
-    - BehaviourMachine.ScaleTo
-    m_NodeTypeHash: 3ba7fbe60b4b4a133ba7fbe6a44d40e392547ed189ef821050fbe8c582b44f19401e1298
-    m_NodeFieldStartIndex: 00000000040000000c00000010000000180000002000000023000000280000002e0000003a000000
-    m_BranchIndex: ffffffff00000000ffffffff020000000200000002000000050000000500000005000000
+    - BehaviourMachine.IsFloatLess
+    - BehaviourMachine.FloatAdd
+    - BehaviourMachine.SetScale
+    - BehaviourMachine.Sequence
+    - BehaviourMachine.SetScale
+    - BehaviourMachine.SetActive
+    - BehaviourMachine.IsFloatEqual
+    m_NodeTypeHash: 3ba7fbe63fc7cae63ba7fbe60b4b4a133ba7fbe689ef821089ef82109678882782b44f1954ef31213fc7cae6be0a0ea189ef8210be0a0ea182b44f1992547ed1
+    m_NodeFieldStartIndex: 00000000040000000b0000000f000000170000001b0000001e00000021000000260000002c000000320000003800000040000000430000004e000000540000005c000000
+    m_BranchIndex: ffffffff00000000ffffffff02000000ffffffff04000000050000000600000006000000060000000600000006000000050000000c0000000c00000004000000
     m_UnityObjectValue: []
-    m_IntValue: 01000000000000000100000003000000000000000100000002000000000000000100000005000000000000004000000004000000000000005a6362105f2e331b07000000000000000600000000000000610000000800000000000000a8f0cd2601000000090000000000000000000000a8f0cd2600000000e2ba4f5a
+    m_IntValue: 0f00000000000000010000000e000000000000003581212d000000000100000000000000010000000300000000000000010000000200000000000000010000000500000000000000070000000000000006000000000000000800000000000000a8f0cd26010000000d0000000000000037e686383581212d0b0000000000000037e68638c328b76b000000000c00000000000000a8f0cd2637e6863837e6863837e686380a000000000000001000000000000000a8f0cd261100000000000000a8f0cd260000000004000000000000005a6362105f2e331b
     m_FloatValue:
     - 5
     - 0
-    - 1
+    - 0
+    - 0
+    - 0
     m_StringValue:
+    - Awake
+    - FloatMultiply
     - OnEnable
     - AnimatorSetBool
     - BehaviourMachine.ConcreteGameObjectVar
     - Moving
     - Update
-    - OverlapSphere
-    - BehaviourMachine.ConcreteGameObjectVar
-    - BehaviourMachine.ConcreteGameObjectVar
+    - Selector
+    - Sequence
+    - IsSkillActivated
+    - BehaviourMachine.FsmEvent
+    - BehaviourMachine.ConcreteFloatVar
+    - SetActive
+    - IsFloatLess
+    - BehaviourMachine.FsmEvent
+    - FloatAdd
+    - SetScale
+    - BehaviourMachine.ConcreteVector3Var
+    - Sequence
+    - SetScale
+    - BehaviourMachine.ConcreteVector3Var
+    - SetActive
     - IsFloatEqual
     - BehaviourMachine.ConcreteFloatVar
-    - Sequence
-    - IsKeyDown
-    - BehaviourMachine.FsmEvent
-    - SetActive
-    - ScaleTo
-    - BehaviourMachine.ConcreteFloatVar
-    - BehaviourMachine.FsmEvent
-    - BehaviourMachine.FsmEvent
     m_CurveValue: []
     m_GenericFieldType:
+    - BehaviourMachine.ConcreteFloatVar
     - BehaviourMachine.ConcreteStringVar
     - BehaviourMachine.ConcreteBoolVar
+    - BehaviourMachine.ConcreteBoolVar
+    - BehaviourMachine.ConcreteFloatVar
     - BehaviourMachine.ConcreteFloatVar
     - BehaviourMachine.ConcreteFloatVar
     - BehaviourMachine.ConcreteBoolVar
     - BehaviourMachine.ConcreteFloatVar
-    m_GenericFieldHash: 7de9e602e4b98a66264ce8ef264ce8efe4b98a66264ce8ef
-    m_GenericFieldSize: 010000000100000001000000010000000100000001000000
-    m_FieldIndex: 0000000000000000010000000200000003000000010000000400000002000000000000000300000001000000050000000600000004000000070000000800000009000000050000000a0000000600000002000000000000000b000000070000000c000000080000000d0000000e0000000f000000030000000100000009000000100000000a00000011000000120000000b000000130000000c00000014000000150000000d00000016000000170000000400000018000000190000000e0000001a00000005000000020000000f00000010000000110000001b0000001c0000001d0000001e000000
-    m_FieldType: 010000000200000005000000050000000100000002000000050000001100000010000000020000001000000005000000010000000200000005000000050000000100000002000000050000001100000010000000030000000c000000110000000100000002000000050000001e0000001200000010000000030000001100000001000000020000000500000001000000020000000500000011000000040000000100000002000000050000001a00000010000000050000000100000002000000050000001000000003000000110000001100000011000000040000001a0000000400000016000000
+    m_GenericFieldHash: 264ce8ef7de9e602e4b98a66e4b98a66264ce8ef264ce8ef264ce8efe4b98a66264ce8ef
+    m_GenericFieldSize: 010000000100000001000000010000000100000001000000010000000100000001000000
+    m_FieldIndex: 0000000000000000010000000200000003000000010000000400000005000000000000000000000006000000070000000200000008000000090000000a000000030000000b000000040000000100000005000000020000000c0000000d000000060000000e0000000f0000001000000007000000110000001200000008000000130000001400000009000000150000000a0000000b000000160000000c000000170000001800000003000000190000001a0000000d0000001b0000000e0000001c0000001d0000001e0000000f0000001f000000200000002100000022000000230000001000000024000000250000001100000026000000270000002800000029000000120000002a0000002b000000130000002c0000002d000000140000000400000001000000050000000200000006000000030000002e000000150000002f0000003000000007000000310000003200000016000000330000003400000035000000080000000400000017000000
+    m_FieldType: 01000000020000000500000005000000010000000200000005000000120000001000000003000000050000000100000002000000050000000500000001000000020000000500000011000000100000000200000010000000050000000100000002000000050000000500000001000000020000000500000001000000020000000500000001000000020000000500000011000000110000000100000002000000050000001a00000010000000050000000100000002000000050000001100000012000000120000000100000002000000050000001200000012000000050000000100000002000000050000001a000000110000001200000012000000120000000100000002000000050000000100000002000000050000001a000000110000001000000003000000100000000300000010000000030000000100000002000000050000001a00000010000000050000000100000002000000050000001e00000012000000100000000300000011000000
     m_FieldPath:
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - instanceID
+    - name
+    - IsMatchSearch
+    - variable
+    - multiplyBy
+    - multiplyBy.value
+    - perSecond
     - instanceID
     - name
     - IsMatchSearch
@@ -298,19 +327,6 @@ MonoBehaviour:
     - instanceID
     - name
     - IsMatchSearch
-    - center
-    - radius
-    - radius.value
-    - layers
-    - storeGameObject
-    - instanceID
-    - name
-    - IsMatchSearch
-    - onSuccess
-    - a
-    - b
-    - b.value
-    - tolerance
     - instanceID
     - name
     - IsMatchSearch
@@ -318,7 +334,7 @@ MonoBehaviour:
     - name
     - IsMatchSearch
     - onSuccess
-    - keyCode
+    - timeout
     - instanceID
     - name
     - IsMatchSearch
@@ -328,15 +344,51 @@ MonoBehaviour:
     - instanceID
     - name
     - IsMatchSearch
-    - time
-    - time.value
-    - speed
-    - onStart
-    - onFinish
-    - loop
+    - onSuccess
+    - a
+    - b
+    - instanceID
+    - name
+    - IsMatchSearch
+    - variable
+    - addBy
+    - perSecond
+    - instanceID
+    - name
+    - IsMatchSearch
     - gameObject
-    - easeType
-    - scale
+    - newScale
+    - newX
+    - newY
+    - newZ
+    - instanceID
+    - name
+    - IsMatchSearch
+    - instanceID
+    - name
+    - IsMatchSearch
+    - gameObject
+    - newScale
+    - newX
+    - newX.value
+    - newY
+    - newY.value
+    - newZ
+    - newZ.value
+    - instanceID
+    - name
+    - IsMatchSearch
+    - gameObject
+    - newValue
+    - newValue.value
+    - instanceID
+    - name
+    - IsMatchSearch
+    - onSuccess
+    - a
+    - b
+    - b.value
+    - tolerance
 --- !u!114 &403989389 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114957492859598266, guid: 2cf02c332f4134b278a7a90213f40266,
@@ -370,7 +422,7 @@ Prefab:
     - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
         type: 2}
       propertyPath: m_FloatVars.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
         type: 2}
@@ -380,7 +432,7 @@ Prefab:
     - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
         type: 2}
       propertyPath: m_Vector3Vars.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
         type: 2}
@@ -636,6 +688,66 @@ Prefab:
         type: 2}
       propertyPath: m_ObjectVars.Array.data[0].objectType
       value: CFX_SpawnSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[1].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[2].m_ID
+      value: 948364855
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[2].m_Name
+      value: SkillScale
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[2].m_Blackboard
+      value: 
+      objectReference: {fileID: 403989393}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[3].m_ID
+      value: 1807165635
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[3].m_Name
+      value: SkillScaleAdd
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[3].m_Blackboard
+      value: 
+      objectReference: {fileID: 403989393}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[3].value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[4].m_ID
+      value: 757170485
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[4].m_Name
+      value: MaxCharity
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[4].m_Blackboard
+      value: 
+      objectReference: {fileID: 403989393}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_FloatVars.Array.data[4].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114518005327299750, guid: 2cf02c332f4134b278a7a90213f40266, type: 2}
