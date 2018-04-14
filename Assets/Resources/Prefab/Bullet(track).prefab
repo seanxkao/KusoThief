@@ -1,0 +1,399 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1901950649820190}
+  m_IsPrefabParent: 1
+--- !u!1 &1901950649820190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4958977264767264}
+  - component: {fileID: 33614890768086590}
+  - component: {fileID: 23187160683134914}
+  - component: {fileID: 95173804733733406}
+  - component: {fileID: 114254355100339946}
+  - component: {fileID: 114235711500352586}
+  - component: {fileID: 114556025350788382}
+  - component: {fileID: 114270513596380326}
+  - component: {fileID: 114577034801252546}
+  - component: {fileID: 65243897458413776}
+  m_Layer: 0
+  m_Name: Bullet(track)
+  m_TagString: EnemyAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4958977264767264
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.83, z: 0.199}
+  m_LocalScale: {x: 0.6, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23187160683134914
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 99d59e6836d74f646a427f21a51d074c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33614890768086590
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Mesh: {fileID: 4300000, guid: b0821201167151c44931ea8b840e9faf, type: 3}
+--- !u!65 &65243897458413776
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30120012, y: 0.3034, z: 1.4016999}
+  m_Center: {x: 0.00000011920928, y: 0, z: 0.000000059604645}
+--- !u!95 &95173804733733406
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b0821201167151c44931ea8b840e9faf, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114235711500352586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27b962ddfa21461eb78fac1cb2f955f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Blackboard: {fileID: 114254355100339946}
+  m_Parent: {fileID: 0}
+  m_StateName: StateMachine
+  m_Color: 0
+  m_HideScript: 1
+  m_Position: {x: 0, y: 0}
+  m_Transitions: []
+  m_CachedInstanceID: 47486
+  m_Description: 
+  m_EnabledState: {fileID: 0}
+  m_LastEnabledState: {fileID: 0}
+  m_StartState: {fileID: 114556025350788382}
+  m_AnyState: {fileID: 0}
+  m_ConcurrentState: {fileID: 0}
+--- !u!114 &114254355100339946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634db10235c0241d6ad43433a106016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FloatVars:
+  - m_ID: 670386901
+    m_Name: Speed
+    m_Blackboard: {fileID: 114254355100339946}
+    m_IsConstant: 0
+    value: 1
+  m_IntVars: []
+  m_BoolVars: []
+  m_StringVars: []
+  m_Vector3Vars: []
+  m_RectVars: []
+  m_ColorVars: []
+  m_QuaternionVars: []
+  m_GameObjectVars:
+  - m_ID: 913183662
+    m_Name: Target
+    m_Blackboard: {fileID: 114254355100339946}
+    m_IsConstant: 0
+    value: {fileID: 0}
+  - m_ID: 125975722
+    m_Name: HitOn
+    m_Blackboard: {fileID: 114254355100339946}
+    m_IsConstant: 0
+    value: {fileID: 0}
+  m_TextureVars: []
+  m_MaterialVars: []
+  m_ObjectVars: []
+  m_DynamicLists: []
+  m_FsmEvents: []
+  m_ConcreteFsmEvents: []
+  m_Namespace: 
+--- !u!114 &114270513596380326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3503dd4bb6712446e867e7314a50d414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 3
+  Size: {x: 0.6, y: 0.2, z: 0.2}
+--- !u!114 &114556025350788382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b065960b75e9a4e6195b143a036f7e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Blackboard: {fileID: 114254355100339946}
+  m_Parent: {fileID: 114235711500352586}
+  m_StateName: Entry
+  m_Color: 0
+  m_HideScript: 1
+  m_Position: {x: 560, y: 30}
+  m_Transitions:
+  - m_Destination: {fileID: 114577034801252546}
+    m_EventID: -10
+  m_CachedInstanceID: 47492
+  m_Description: 
+  m_IgnoreTimeScale: 0
+  m_ResetStatusOnDisable: 1
+  m_EnabledStates: []
+  m_NodeSerialization:
+    m_NodeTypes:
+    - BehaviourMachine.OnEnable
+    - BehaviourMachine.Update
+    - BehaviourMachine.FindGameObjectByTag
+    - BehaviourMachine.IsGameObjectNotEqual
+    - BehaviourMachine.SendEvent
+    m_NodeTypeHash: 3ba7fbe63ba7fbe6a9c6502af8265a13c0939e8a
+    m_NodeFieldStartIndex: 0000000004000000080000000e000000150000001c000000
+    m_BranchIndex: ffffffffffffffff010000000100000001000000
+    m_UnityObjectValue:
+    - {fileID: 0}
+    m_IntValue: 0100000000000000010000000200000000000000010000000300000000000000ae136e360400000000000000ae136e360500000000000000f6ffffff
+    m_FloatValue: []
+    m_StringValue:
+    - OnEnable
+    - Update
+    - FindGameObjectByTag
+    - Chan
+    - IsGameObjectNotEqual
+    - BehaviourMachine.FsmEvent
+    - SendEvent
+    - BehaviourMachine.ConcreteFloatVar
+    - BehaviourMachine.ConcreteFloatVar
+    - BehaviourMachine.ConcreteBoolVar
+    m_CurveValue: []
+    m_GenericFieldType:
+    - BehaviourMachine.ConcreteStringVar
+    - BehaviourMachine.ConcreteGameObjectVar
+    m_GenericFieldHash: 7de9e602e5faf787
+    m_GenericFieldSize: 0100000001000000
+    m_FieldIndex: 000000000000000001000000020000000300000001000000040000000500000006000000020000000700000000000000030000000800000009000000040000000a000000050000000b00000001000000000000000c000000060000000d0000000e000000070000000800000009000000
+    m_FieldType: 010000000200000005000000050000000100000002000000050000000500000001000000020000000500000010000000020000001a000000010000000200000005000000110000001a000000100000000f0000000100000002000000050000001e000000110000001100000011000000
+    m_FieldPath:
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - instanceID
+    - name
+    - IsMatchSearch
+    - tag
+    - tag.value
+    - storeGameObject
+    - instanceID
+    - name
+    - IsMatchSearch
+    - onSuccess
+    - a
+    - b
+    - b.value
+    - instanceID
+    - name
+    - IsMatchSearch
+    - eventToSend
+    - delay
+    - storeDelayTime
+    - storeEventUsed
+--- !u!114 &114577034801252546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901950649820190}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b065960b75e9a4e6195b143a036f7e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Blackboard: {fileID: 114254355100339946}
+  m_Parent: {fileID: 114235711500352586}
+  m_StateName: Shoot
+  m_Color: 0
+  m_HideScript: 1
+  m_Position: {x: 760, y: 30}
+  m_Transitions: []
+  m_CachedInstanceID: 47494
+  m_Description: 
+  m_IgnoreTimeScale: 0
+  m_ResetStatusOnDisable: 1
+  m_EnabledStates: []
+  m_NodeSerialization:
+    m_NodeTypes:
+    - BehaviourMachine.OnEnable
+    - BehaviourMachine.LookAt
+    - BehaviourMachine.Update
+    - BehaviourMachine.MoveTowards
+    - BehaviourMachine.OnTriggerEnter
+    - BehaviourMachine.Sequence
+    - BehaviourMachine.HasTag
+    - BehaviourMachine.DestroyGameObject
+    m_NodeTypeHash: 3ba7fbe6d9c7bcf23ba7fbe64d64ca3d601ab1c489ef8210b8c1bd72104cf118
+    m_NodeFieldStartIndex: 00000000040000000b0000000f000000190000001e00000021000000280000002d000000
+    m_BranchIndex: ffffffff00000000ffffffff02000000ffffffff040000000500000005000000
+    m_UnityObjectValue: []
+    m_IntValue: 0100000000000000010000000900000000000000ae136e360200000000000000010000000300000000000000ae136e36d54af52701000000050000000000000001000000aa3c820707000000000000000600000000000000aa3c82070800000001000000
+    m_FloatValue: []
+    m_StringValue:
+    - OnEnable
+    - LookAt
+    - BehaviourMachine.ConcreteGameObjectVar
+    - BehaviourMachine.ConcreteVector3Var
+    - BehaviourMachine.ConcreteBoolVar
+    - Update
+    - MoveTowards
+    - BehaviourMachine.ConcreteGameObjectVar
+    - BehaviourMachine.ConcreteBoolVar
+    - BehaviourMachine.ConcreteBoolVar
+    - OnTriggerEnter
+    - Sequence (Hit)
+    - HasTag
+    - BehaviourMachine.FsmEvent
+    - Chan
+    - DestroyGameObject
+    - BehaviourMachine.ConcreteGameObjectVar
+    - BehaviourMachine.ConcreteFloatVar
+    m_CurveValue: []
+    m_GenericFieldType:
+    - BehaviourMachine.ConcreteBoolVar
+    - BehaviourMachine.ConcreteStringVar
+    m_GenericFieldHash: e4b98a667de9e602
+    m_GenericFieldSize: 0100000001000000
+    m_FieldIndex: 00000000000000000100000002000000030000000100000004000000020000000500000003000000040000000600000005000000070000000800000009000000060000000a000000070000000b0000000c00000008000000000000000d000000090000000e0000000a0000000f0000001000000011000000120000000b00000013000000140000000c000000150000000d00000016000000010000000e000000170000000f000000180000001000000011000000
+    m_FieldType: 01000000020000000500000005000000010000000200000005000000110000001a000000110000001100000001000000020000000500000005000000010000000200000005000000110000001a0000001200000011000000100000000500000011000000010000000200000005000000050000001a000000010000000200000005000000010000000200000005000000110000001a00000010000000020000000100000002000000050000001100000011000000
+    m_FieldPath:
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - instanceID
+    - name
+    - IsMatchSearch
+    - objectToRotate
+    - objectToLookAt
+    - worldUp
+    - ignoreYAxis
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - instanceID
+    - name
+    - IsMatchSearch
+    - objectToMove
+    - targetPosition
+    - speed
+    - ignoreXAxis
+    - ignoreYAxis
+    - ignoreYAxis.value
+    - ignoreZAxis
+    - instanceID
+    - name
+    - IsMatchSearch
+    - enabled
+    - other
+    - instanceID
+    - name
+    - IsMatchSearch
+    - instanceID
+    - name
+    - IsMatchSearch
+    - onSuccess
+    - gameObject
+    - tag
+    - tag.value
+    - instanceID
+    - name
+    - IsMatchSearch
+    - gameObject
+    - delayTime
