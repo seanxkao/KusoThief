@@ -37,13 +37,13 @@ namespace Compass.FSM {
                 if (axis != 0) {
                     if (axis * prvAxis < 0) {               
                         nowStatus = Status.Success;
+                        prvTriggerTime = Time.time;
                     }
-                    prvTriggerTime = Time.time;
                     prvAxis = axis;
                 }
             }
 
-            return Status.Success;
+            return nowStatus;
         }
     }
 }
