@@ -4,14 +4,14 @@ using UnityEngine;
 using BehaviourMachine;
 
 [NodeInfo(category = "Action/Thief/")]
-public class ThrowItems : ActionNode {
+public class DropItem : ActionNode {
 
-    public GameObjectVar target;
+    public GameObjectVar item;
     public GameObjectVar player;
 
-	public override void Start () {
+    public override void Start () {
         base.Start (); 
-        target.Value.GetComponent<Target>().emit(player.Value.transform);
+        item.transform.parent = player.transform.parent;
     }
 
     public override Status Update () {
