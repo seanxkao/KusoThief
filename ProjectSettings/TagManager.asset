@@ -9,8 +9,8 @@ TagManager:
   - ChanAttack
   - EnemyAttack
   - Power
-  - Collide
   - Item
+  - Collide
   layers:
   - Default
   - TransparentFX
@@ -20,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - Target
-  - Chan
-  - Item
+  - 
+  - 
+  - 
   - 
   - 
   - 
