@@ -11,11 +11,13 @@ public class StageController : MonoBehaviour {
 	[SerializeField]	protected GameObject carSpawners;
 	[SerializeField]	protected HpBar hpBar;
 	[SerializeField]	protected TimeBar timeBar;
+	protected float time;
 
 	int counter;
 	// Use this for initialization
 	void Start () {
 		panel.SetActive (true);
+		
 	}
 
 	void stop(){
@@ -69,6 +71,7 @@ public class StageController : MonoBehaviour {
 			showText.text = "Full!";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
 		}
 		//events
 		if(timeBar.isEmpty() && counter==5){
@@ -77,7 +80,11 @@ public class StageController : MonoBehaviour {
 			showText.text = "Time up!";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
+		}
+		if (time > 1f && counter == 6) {
 		}
 
+		time += Time.deltaTime;
 	}
 }
