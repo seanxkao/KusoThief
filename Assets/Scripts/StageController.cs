@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StageController : MonoBehaviour {
 
@@ -86,6 +87,7 @@ public class StageController : MonoBehaviour {
 			time = 0;
 		}
 		if (time > 1f && counter == 6) {
+			SceneManager.LoadScene ("Request");
 		}
 
 		time += Time.deltaTime;

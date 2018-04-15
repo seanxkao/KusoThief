@@ -88,7 +88,7 @@ public class Ama : MonoBehaviour {
 				if (player != null) {
 					player.letGo ();
 				}
-				Player.instance.addCharity (1f);
+				Player.instance.addCharity (0.1f);
 			}
 		}
 	}
@@ -104,6 +104,7 @@ public class Ama : MonoBehaviour {
 			Blood blood = Instantiate (bloodP);
 			blood.transform.position = transform.position;
 			blood.setSize (2f);
+			GetComponent<AudioSource> ().Play();
 
 			rb.drag = 0;
 			rb.velocity = (transform.position-collision.transform.position).normalized*speed*4f;

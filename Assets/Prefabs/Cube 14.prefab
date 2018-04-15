@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54023690073239504}
   - component: {fileID: 114276444761496510}
   m_Layer: 10
-  m_Name: Cube 13
+  m_Name: Cube 14
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99af39c18b00dfe4e8db374f5072c962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 10
-  img: {fileID: 21300000, guid: f5ef53d6853a70042a0b1041ea405a08, type: 3}
+  ID: 14
+  img: {fileID: 21300000, guid: deba0cde8fe5d6146a8a615774021c84, type: 3}

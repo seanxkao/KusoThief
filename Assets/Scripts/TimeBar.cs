@@ -9,7 +9,7 @@ public class TimeBar : Bar {
 
 	protected override void Start(){
 		base.Start();
-		max = 10f;
+		max = 120f;
 		value = max;
 	}
 
