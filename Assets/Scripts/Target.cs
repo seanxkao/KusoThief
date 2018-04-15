@@ -7,7 +7,8 @@ public class Target : MonoBehaviour {
 
     [SerializeField] private float minThrowScale;
     [SerializeField] private float maxThrowScale;
-    [SerializeField] private float velocity;
+    [SerializeField] private float minVelocity;
+    [SerializeField] private float velocityScale;
     [SerializeField] private GameObject[] items;
     private List<Transform> dropItems;
 
@@ -19,7 +20,9 @@ public class Target : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (dropItems.Count > 0) {
-            GetComponent<Rigidbody> ().velocity = (dropItems [0].transform.position - transform.position) * velocity;
+            Vector3 dir = dropItems [0].transform.position - transform.position;
+            dir = dir.normalized * Mathf.Max (dir.magnitude, minVelocity);
+            GetComponent<Rigidbody> ().velocity = dir + dir * (dir.magnitude - minVelocity) * velocityScale;
         }
         else {
             GetComponent<Rigidbody> ().velocity = Vector3.zero;
