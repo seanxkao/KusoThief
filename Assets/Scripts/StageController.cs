@@ -11,6 +11,8 @@ public class StageController : MonoBehaviour {
 	[SerializeField]	protected GameObject carSpawners;
 	[SerializeField]	protected HpBar hpBar;
 	[SerializeField]	protected TimeBar timeBar;
+	[SerializeField]	protected CharityPasser charityPasser;
+
 	protected float time;
 
 	int counter;
@@ -21,6 +23,7 @@ public class StageController : MonoBehaviour {
 	}
 
 	void stop(){
+		charityPasser.charity = Player.instance.getCharity ();
 		panel.SetActive (true);
 		amaSpawners.SetActive (false);
 		carSpawners.SetActive (false);

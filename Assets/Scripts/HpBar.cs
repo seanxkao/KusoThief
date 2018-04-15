@@ -14,4 +14,7 @@ public class HpBar : Bar {
 		value = player.getCharity();
 		max = player.getMaxCharity();
     }
+	public float getCharity(){
+		return value;
+	}
 }
