@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Blackboard: {fileID: 403989393}
   m_Parent: {fileID: 403989390}
-  m_StateName: BehaviourTree
+  m_StateName: End
   m_Color: 0
   m_HideScript: 1
   m_Position: {x: 380, y: 160}
@@ -1734,14 +1734,18 @@ MonoBehaviour:
     - BehaviourMachine.PrioritySelector
     - BehaviourMachine.Sequence
     - BehaviourMachine.IsGameObjectNotEqual
+    - GetItemID
+    - BehaviourMachine.IsIntEqual
+    - BehaviourMachine.Log
     - BehaviourMachine.Sequence
+    - BehaviourMachine.Log
     - BehaviourMachine.Update
-    m_NodeTypeHash: 3ba7fbe63ba7fbe689ef821089ef8210f8265a1389ef82103ba7fbe6
-    m_NodeFieldStartIndex: 0000000004000000080000000b0000000e00000015000000180000001c000000
-    m_BranchIndex: ffffffffffffffff01000000020000000300000002000000ffffffff
+    m_NodeTypeHash: 3ba7fbe63ba7fbe689ef821089ef8210f8265a13a35341e54bb374faa895acc289ef8210a895acc23ba7fbe6
+    m_NodeFieldStartIndex: 0000000004000000080000000b0000000e000000150000001a00000022000000280000002b0000003100000035000000
+    m_BranchIndex: ffffffffffffffff0100000002000000030000000300000003000000030000000200000008000000ffffffff
     m_UnityObjectValue:
     - {fileID: 0}
-    m_IntValue: 010000000000000001000000030000000000000001000000050000000000000006000000000000000400000000000000f2cfab260700000000000000020000000000000001000000
+    m_IntValue: 010000000000000001000000030000000000000001000000050000000000000006000000000000000400000000000000f2cfab260800000000000000f2cfab266f01ed5b09000000000000006f01ed5b010000000a000000000000000000000007000000000000000b0000000000000000000000020000000000000001000000
     m_FloatValue: []
     m_StringValue:
     - OnEnable
@@ -1750,15 +1754,26 @@ MonoBehaviour:
     - Win
     - IsGameObjectNotEqual
     - BehaviourMachine.FsmEvent
+    - GetItemID
+    - IsIntEqual
+    - BehaviourMachine.FsmEvent
+    - BehaviourMachine.ConcreteIntVar
+    - Log
+    - WIN
     - Lose
+    - Log
+    - LOSE
     - Update
     m_CurveValue: []
     m_GenericFieldType:
     - BehaviourMachine.ConcreteGameObjectVar
-    m_GenericFieldHash: e5faf787
-    m_GenericFieldSize: 01000000
-    m_FieldIndex: 00000000000000000100000002000000030000000100000004000000050000000600000002000000070000000800000003000000090000000a000000040000000b000000050000000c00000000000000000000000d000000060000000e0000000f000000070000001000000011000000
-    m_FieldType: 0100000002000000050000000500000001000000020000000500000005000000010000000200000005000000010000000200000005000000010000000200000005000000110000001a000000100000000f00000001000000020000000500000001000000020000000500000005000000
+    - BehaviourMachine.ConcreteIntVar
+    - BehaviourMachine.ConcreteStringVar
+    - BehaviourMachine.ConcreteStringVar
+    m_GenericFieldHash: e5faf787febf89497de9e6027de9e602
+    m_GenericFieldSize: 01000000010000000100000001000000
+    m_FieldIndex: 00000000000000000100000002000000030000000100000004000000050000000600000002000000070000000800000003000000090000000a000000040000000b000000050000000c00000000000000000000000d000000060000000e0000000f000000100000001100000007000000120000000800000013000000010000001400000009000000150000000a00000016000000020000000b00000017000000180000000c000000190000001a0000000d0000001b000000030000000e0000001c0000001d0000000f0000001e0000001f000000
+    m_FieldType: 0100000002000000050000000500000001000000020000000500000005000000010000000200000005000000010000000200000005000000010000000200000005000000110000001a000000100000000f0000000100000002000000050000001a00000013000000010000000200000005000000110000001300000010000000010000001100000001000000020000000500000010000000020000000400000001000000020000000500000001000000020000000500000010000000020000000400000001000000020000000500000005000000
     m_FieldPath:
     - instanceID
     - name
@@ -1784,6 +1799,31 @@ MonoBehaviour:
     - instanceID
     - name
     - IsMatchSearch
+    - item
+    - ID
+    - instanceID
+    - name
+    - IsMatchSearch
+    - onSuccess
+    - a
+    - b
+    - b.value
+    - tolerance
+    - instanceID
+    - name
+    - IsMatchSearch
+    - message
+    - message.value
+    - logType
+    - instanceID
+    - name
+    - IsMatchSearch
+    - instanceID
+    - name
+    - IsMatchSearch
+    - message
+    - message.value
+    - logType
     - instanceID
     - name
     - IsMatchSearch
@@ -2152,6 +2192,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_IntVars.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
         type: 2}
       propertyPath: m_FloatVars.Array.size
@@ -4225,6 +4270,21 @@ Prefab:
       propertyPath: m_FloatVars.Array.data[5].value
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_IntVars.Array.data[1].m_ID
+      value: 1542259055
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_IntVars.Array.data[1].m_Name
+      value: ItemID
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083346592922530, guid: 2cf02c332f4134b278a7a90213f40266,
+        type: 2}
+      propertyPath: m_IntVars.Array.data[1].m_Blackboard
+      value: 
+      objectReference: {fileID: 403989393}
     m_RemovedComponents:
     - {fileID: 114518005327299750, guid: 2cf02c332f4134b278a7a90213f40266, type: 2}
     - {fileID: 114957492859598266, guid: 2cf02c332f4134b278a7a90213f40266, type: 2}
