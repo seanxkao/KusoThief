@@ -78,6 +78,23 @@ public class Ama : MonoBehaviour {
 		this.player = player;
 	}
 
+	protected void die(){
+		state = 4;
+		GetComponent<Collider2D> ().enabled = false;
+		if (player) {
+			player.letGo ();
+		}
+		Player.instance.addCharity (-0.05f);
+		//injured, scream and spawn blood
+		GetComponent<SpriteRenderer> ().sprite = injured;
+		GetComponent<SpriteRenderer> ().sortingOrder = -5;
+		GetComponent<AudioSource> ().Play();
+		Blood blood = Instantiate (bloodP);
+		blood.transform.position = transform.position;
+		blood.setSize (2f);
+	
+	}
+
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "Goal") {
 			if (state == 3) {
@@ -94,22 +111,11 @@ public class Ama : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
-		if (collision.gameObject.layer == LayerMask.NameToLayer ("Car")) {
-			GetComponent<Collider2D> ().enabled = false;
-			if (player) {
-				player.letGo ();
-			}
-			Player.instance.addCharity (-0.05f);
-			GetComponent<SpriteRenderer> ().sprite = injured;
-			Blood blood = Instantiate (bloodP);
-			blood.transform.position = transform.position;
-			blood.setSize (2f);
-			GetComponent<AudioSource> ().Play();
-
+		if (collision.gameObject.layer == LayerMask.NameToLayer ("Car") || collision.gameObject.layer == LayerMask.NameToLayer ("Killer")) {
+			die();
 			rb.drag = 0;
 			rb.velocity = (transform.position-collision.transform.position).normalized*speed*4f;
 			rb.AddTorque (15f);
-			state = 4;
 		}
 	}
 }
