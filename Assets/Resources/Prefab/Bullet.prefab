@@ -279,7 +279,7 @@ MonoBehaviour:
   m_HideScript: 1
   m_Position: {x: 770, y: 40}
   m_Transitions: []
-  m_CachedInstanceID: 64186
+  m_CachedInstanceID: 45948
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 114311587400018162}
     m_EventID: -10
-  m_CachedInstanceID: 64188
+  m_CachedInstanceID: 45950
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_HideScript: 1
   m_Position: {x: 0, y: 0}
   m_Transitions: []
-  m_CachedInstanceID: 64190
+  m_CachedInstanceID: 45952
   m_Description: 
   m_EnabledState: {fileID: 0}
   m_LastEnabledState: {fileID: 0}

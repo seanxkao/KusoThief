@@ -4100,7 +4100,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465073948745774}
-  m_LocalRotation: {x: -0.093746535, y: 0.6978551, z: 0.707469, w: 0.060806718}
+  m_LocalRotation: {x: -0.093746535, y: 0.6978551, z: 0.707469, w: 0.060806714}
   m_LocalPosition: {x: -0.05543403, y: 0.0017306843, z: 0.098653734}
   m_LocalScale: {x: 1.0000004, y: 1.0000006, z: 1.0000005}
   m_Children:
@@ -5226,7 +5226,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 114957492859598266}
     m_EventID: 274883418
-  m_CachedInstanceID: 55302
+  m_CachedInstanceID: 36010
   m_NodeSerialization:
     m_NodeTypes:
     - BehaviourMachine.AnimatorSetBool
@@ -5318,7 +5318,7 @@ MonoBehaviour:
   m_HideScript: 1
   m_Position: {x: 100, y: 180}
   m_Transitions: []
-  m_CachedInstanceID: 55306
+  m_CachedInstanceID: 36014
   m_NodeSerialization:
     m_NodeTypes:
     - BehaviourMachine.EveryFrame
@@ -5449,7 +5449,7 @@ MonoBehaviour:
   m_HideScript: 1
   m_Position: {x: 0, y: 0}
   m_Transitions: []
-  m_CachedInstanceID: 55308
+  m_CachedInstanceID: 36016
   m_Description: 
   m_EnabledState: {fileID: 0}
   m_LastEnabledState: {fileID: 0}
@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 114518005327299750}
     m_EventID: 1532808375
-  m_CachedInstanceID: 55310
+  m_CachedInstanceID: 36018
   m_NodeSerialization:
     m_NodeTypes:
     - BehaviourMachine.AnimatorSetBool
