@@ -17,4 +17,7 @@ public class HpBar : Bar {
 	public float getCharity(){
 		return value;
 	}
+	public bool isKillerActivate(){
+		return value / max >= 0.39f;
+	}
 }

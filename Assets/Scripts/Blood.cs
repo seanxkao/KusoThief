@@ -6,7 +6,7 @@ public class Blood : MonoBehaviour {
 	int state;
 	float maxSize = 1;
 	float time;
-	float stayDuration = 10f;
+	float stayDuration = 20f;
 	float disappearDuration = 3f;
 
 	// Use this for initialization

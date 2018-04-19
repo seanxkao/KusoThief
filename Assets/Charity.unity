@@ -253,6 +253,50 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60336279}
+--- !u!1 &64820047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 64820048}
+  - component: {fileID: 64820049}
+  m_Layer: 0
+  m_Name: KillerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &64820048
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64820047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.18, y: -4.05, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64820049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64820047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff64f3c50cbfde4ebed33cbdd9caaaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killerP: {fileID: 114046373439686862, guid: 8b8ebd3d4a8464843a6aa713957ee458, type: 2}
+  nextSpawn: 0
+  minDuration: 20
+  maxDuration: 30
 --- !u!1 &150464179
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amaP: {fileID: 114452541510212944, guid: 79dd49ee8bf60d846a6a812d7a37156a, type: 2}
-  duration: 1
+  duration: 3
 --- !u!4 &474118180
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,7 +1456,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345803565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.03, y: 4.43, z: 0}
+  m_LocalPosition: {x: 5.62, y: 4.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1176927438}
@@ -1537,10 +1581,11 @@ MonoBehaviour:
   panel: {fileID: 60336279}
   showTextP: {fileID: 114712511171506838, guid: 34a8045a75805de47bd6cf23232e0e58,
     type: 2}
-  amaSpawners: {fileID: 474118178}
-  carSpawners: {fileID: 551104327}
   hpBar: {fileID: 1157745462}
   timeBar: {fileID: 1345803566}
+  amaSpawners: {fileID: 474118178}
+  carSpawners: {fileID: 551104327}
+  killerSpawner: {fileID: 64820049}
   charityPasser: {fileID: 1070305680}
 --- !u!1 &1610049185
 GameObject:
@@ -1570,11 +1615,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queuePoints:
-  - {x: -5, y: -4.5}
-  - {x: -3, y: -4.5}
-  - {x: -1, y: -4.5}
-  - {x: 1, y: -4.5}
-  - {x: 3, y: -4.5}
+  - {x: -2, y: -4.5}
+  - {x: 0, y: -4.5}
+  - {x: 2, y: -4.5}
+  - {x: 4, y: -4.5}
+  - {x: 6, y: -4.5}
 --- !u!4 &1610049187
 Transform:
   m_ObjectHideFlags: 0
@@ -1785,7 +1830,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea3828ef2400d30479b72a4689d3d9b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.766
   m_Pitch: 1
   Loop: 1
   Mute: 0

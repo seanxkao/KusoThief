@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageController : MonoBehaviour {
-
 	[SerializeField]	protected GameObject panel;
 	[SerializeField]	protected Text showTextP;
-	[SerializeField]	protected GameObject amaSpawners;
-	[SerializeField]	protected GameObject carSpawners;
 	[SerializeField]	protected HpBar hpBar;
 	[SerializeField]	protected TimeBar timeBar;
+	[SerializeField]	protected GameObject amaSpawners;
+	[SerializeField]	protected GameObject carSpawners;
+	[SerializeField]	protected KillerSpawner killerSpawner;
 	[SerializeField]	protected CharityPasser charityPasser;
 
 	protected float time;
@@ -36,38 +36,45 @@ public class StageController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > 1f && counter == 0) {
+		if (time > 1f && counter == 0) {
 			Text showText = Instantiate (showTextP, panel.transform);
 			showText.text = "3";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
 		}
-		if (Time.time > 2f && counter == 1) {
+		if (time > 1f && counter == 1) {
 			Text showText = Instantiate (showTextP, panel.transform);
 			showText.text = "2";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
 		}
-		if (Time.time > 3f && counter == 2) {
+		if (time > 1f && counter == 2) {
 			Text showText = Instantiate (showTextP, panel.transform);
 			showText.text = "1";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
 		}
-		if (Time.time > 4f && counter == 3) {
+		if (time > 1f && counter == 3) {
 			Text showText = Instantiate (showTextP, panel.transform);
 			showText.text = "Start!";
 			Destroy (showText.gameObject, 2.5f);
 			counter++;
+			time = 0;
 		}
-		if (Time.time > 5f && counter == 4) {
+		if (time > 1f && counter == 4) {
 			panel.SetActive (false);
 			amaSpawners.SetActive (true);
 			carSpawners.SetActive (true);
 			timeBar.countDown ();
 			counter++;
+			time = 0;
 		}
-
+		if (hpBar.isKillerActivate () && !killerSpawner.isActiveAndEnabled) {
+			killerSpawner.gameObject.SetActive (true);
+		}
 		//events
 		if(hpBar.isFull() && counter==5){
 			stop ();

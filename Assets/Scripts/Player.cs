@@ -65,26 +65,45 @@ public class Player : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Z)){
 			if (joint == null) {
-				int mask = LayerMask.GetMask ("Ama");
-				Collider2D collider = Physics2D.OverlapBox (transform.position, GetComponent<Collider2D> ().bounds.size * 2, 0, mask);
+				int mask = LayerMask.GetMask ("Killer");
+				Collider2D collider = Physics2D.OverlapBox (transform.position, GetComponent<Collider2D> ().bounds.size * 3.5f, 0, mask);
 				if (collider != null) {
-					Ama ama = collider.GetComponent<Ama> ();
-					Debug.Log (ama.getState ());
-					if (ama.getState () != 3) {
-						ama.follow (this);
+					Killer killer = collider.GetComponent<Killer> ();
+					if (killer.getState () != 4) {
+						killer.follow (this);
 						joint = gameObject.AddComponent<SpringJoint2D> ();
 						joint.connectedBody = collider.attachedRigidbody;
 						joint.autoConfigureDistance = false;
-						joint.distance = 0.2f;
+						joint.distance = 0.4f;
 						joint.enableCollision = true;
 					}
+				} else {
+					mask = LayerMask.GetMask ("Ama");
+					collider = Physics2D.OverlapBox (transform.position, GetComponent<Collider2D> ().bounds.size * 2, 0, mask);
+					if (collider != null) {
+						Ama ama = collider.GetComponent<Ama> ();
+						Debug.Log (ama.getState ());
+						if (ama.getState () != 3) {
+							ama.follow (this);
+							joint = gameObject.AddComponent<SpringJoint2D> ();
+							joint.connectedBody = collider.attachedRigidbody;
+							joint.autoConfigureDistance = false;
+							joint.distance = 0.2f;
+							joint.enableCollision = true;
+						}
+					}
 				}
+
 			} else {
+				Killer killer = joint.connectedBody.GetComponent<Killer> ();
+				if (killer) {
+					killer.unfollow ();
+				}
 				Destroy (joint);
 			}
 		}
 		if (joint == null) {
-			speed = 5f;
+			speed = 4f;
 		} else {
 			speed = 3f;
 		}

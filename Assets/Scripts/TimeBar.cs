@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeBar : Bar {
-
-	
 	protected bool counting = false;
 
 	protected override void Start(){
