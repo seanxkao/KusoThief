@@ -10,9 +10,13 @@ public class Target : MonoBehaviour {
     [SerializeField] private float minVelocity;
     [SerializeField] private float velocityScale;
     [SerializeField] private GameObject[] items;
-    [SerializeField] private bool[] isDropped;
+    private bool[] isDropped;
     private GameObject[] dropItems;
     private List<GameObject> dropItemList;
+
+    public void setItems(GameObject[] newItems) {
+        items = newItems;
+    }
 
 	// Use this for initialization
 	void Start () { 
