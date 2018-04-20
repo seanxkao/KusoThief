@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Update () {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            ToMenu();
+        }
+    }
+
+    public void ToTutorial () {
+        SceneManager.LoadScene("Tutorial");
+    }
 
 	public void ToCharity () {
-		SceneManager.LoadScene ("Charity");	
+		SceneManager.LoadScene ("Charity");
 	}
 
 	public void ToSteal () {
