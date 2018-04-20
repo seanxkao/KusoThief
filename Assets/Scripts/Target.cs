@@ -11,11 +11,12 @@ public class Target : MonoBehaviour {
     [SerializeField] private float minVelocity;
     [SerializeField] private float velocityScale;
     [SerializeField] private GameObject[] items;
-    private bool isRandomMove = true;
+	[SerializeField] private bool isRandomMove = true;
     private NavMeshAgent agent;
     private bool[] isDropped;
     private GameObject[] dropItems;
     private List<GameObject> dropItemList;
+	private Coroutine randomMoveCoroutine;
 
     public void setItems(GameObject[] newItems) {
         items = newItems;
@@ -30,20 +31,23 @@ public class Target : MonoBehaviour {
         for (int i = 0; i < isDropped.Length; i++) {
             isDropped [i] = false;
         }
+		randomMoveCoroutine = null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (dropItemList.Count > 0) {
-            Vector3 dir = dropItemList [0].transform.position - transform.position;
-            dir = dir.normalized * Mathf.Max (dir.magnitude, minVelocity);
-            GetComponent<Rigidbody> ().velocity = dir + dir * (dir.magnitude - minVelocity) * velocityScale;
-            isRandomMove = true;
+		if (dropItemList.Count > 0) {
+			if (randomMoveCoroutine != null) {
+				StopCoroutine (randomMoveCoroutine);
+				randomMoveCoroutine = null;
+			}
+
+			agent.SetDestination (dropItemList [0].transform.position);
         }
         else {
             //GetComponent<Rigidbody> ().velocity = Vector3.zero;
             if (isRandomMove) {
-                StartCoroutine(RandomMove());
+				randomMoveCoroutine = StartCoroutine(RandomMove());
             }
         }
 	}
@@ -79,7 +83,7 @@ public class Target : MonoBehaviour {
             }
         }
     }
-
+		
     private IEnumerator RandomMove () {
         isRandomMove = false;
         Vector3 goal = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));

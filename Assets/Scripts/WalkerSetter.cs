@@ -13,12 +13,11 @@ public class WalkerSetter : MonoBehaviour {
 	private int[] IDs;
     private bool[] used;
 
-	// Use this for initialization
-	void Start () {
+	void Awake() {
 		// check
-        if (minItemLen < 0 || maxItemLen < minItemLen) {
-            Debug.LogError ("Wrong item len bounds.");
-        }
+		if (minItemLen < 0 || maxItemLen < minItemLen) {
+			Debug.LogError ("Wrong item len bounds.");
+		}
 
 		// init
 		tPositions = new Transform[targetPositions.transform.childCount];
@@ -27,15 +26,15 @@ public class WalkerSetter : MonoBehaviour {
 		}
 		shuffleTransform ();
 		walkers = FindObjectsOfType<Target>();
-        Object[] objs = Resources.LoadAll ("Prefab/Items");
-        items = new GameObject[objs.Length];
+		Object[] objs = Resources.LoadAll ("Prefab/Items");
+		items = new GameObject[objs.Length];
 		IDs = new int[objs.Length];
-        used = new bool[objs.Length];
-        for (int i = 0; i < objs.Length; i++) {
-            items [i] = (GameObject)objs [i];
+		used = new bool[objs.Length];
+		for (int i = 0; i < objs.Length; i++) {
+			items [i] = (GameObject)objs [i];
 			IDs [i] = items [i].GetComponent<Item> ().ID;
-            used [i] = false;
-        }
+			used [i] = false;
+		}
 
 		// set positions
 		for(int i = 0; i < walkers.Length; i++) {
@@ -52,16 +51,20 @@ public class WalkerSetter : MonoBehaviour {
 			// for test
 			targetIdx = 1;
 		}
-        used [targetIdx] = true;
-        GameObject[] tmpItemList = spawnItemList (Random.Range (minItemLen, maxItemLen + 1));
+		used [targetIdx] = true;
+		GameObject[] tmpItemList = spawnItemList (Random.Range (minItemLen, maxItemLen + 1));
 		used [getIdxByID (tmpItemList [0].GetComponent<Item> ().ID)] = false;
 		tmpItemList [0] = items [targetIdx];
 		walkers [0].setItems (tmpItemList);
 
-        for (int i = 1; i < walkers.Length; i++) {
-            Target walker = walkers [i];
-            walker.setItems (spawnItemList (Random.Range (minItemLen, maxItemLen + 1)));
-        }
+		for (int i = 1; i < walkers.Length; i++) {
+			Target walker = walkers [i];
+			walker.setItems (spawnItemList (Random.Range (minItemLen, maxItemLen + 1)));
+		}
+	}
+	// Use this for initialization
+	void Start () {
+		
 	}
 	
 	// Update is called once per frame

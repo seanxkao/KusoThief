@@ -25,6 +25,9 @@ namespace Compass.FSM {
         }
         public override void OnEnable () {
             base.OnEnable ();
+			if (this.tree.stateName == "Focus") {
+				nowStatus = Status.Success;
+			}
             //Reset ();
         }
         public override Status Update () {

@@ -25,7 +25,7 @@ namespace UnityChan
 		{
 			// 各参照の初期化
 			standardPos = GameObject.Find ("CamPos").transform;
-            diffPos = standardPos.localPosition;
+			diffPos = standardPos.position - unityChan.transform.position;
 		
 			if (GameObject.Find ("FrontPos"))
 				frontPos = GameObject.Find ("FrontPos").transform;
