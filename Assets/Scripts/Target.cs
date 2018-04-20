@@ -10,17 +10,28 @@ public class Target : MonoBehaviour {
     [SerializeField] private float minVelocity;
     [SerializeField] private float velocityScale;
     [SerializeField] private GameObject[] items;
-    private List<Transform> dropItems;
+    private bool[] isDropped;
+    private GameObject[] dropItems;
+    private List<GameObject> dropItemList;
+
+    public void setItems(GameObject[] newItems) {
+        items = newItems;
+    }
 
 	// Use this for initialization
 	void Start () { 
-        dropItems = new List<Transform> ();
+        dropItems = new GameObject[items.Length];
+        isDropped = new bool[items.Length];
+        dropItemList = new List<GameObject> ();
+        for (int i = 0; i < isDropped.Length; i++) {
+            isDropped [i] = false;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (dropItems.Count > 0) {
-            Vector3 dir = dropItems [0].transform.position - transform.position;
+        if (dropItemList.Count > 0) {
+            Vector3 dir = dropItemList [0].transform.position - transform.position;
             dir = dir.normalized * Mathf.Max (dir.magnitude, minVelocity);
             GetComponent<Rigidbody> ().velocity = dir + dir * (dir.magnitude - minVelocity) * velocityScale;
         }
@@ -31,23 +42,32 @@ public class Target : MonoBehaviour {
 
     public void emit(Transform player) {
         Vector3 dir = player.position - transform.position;
-        foreach (GameObject item in items) {
+        for (int i = 0; i < items.Length; i++) {
+            if (isDropped [i])
+                continue;
+            GameObject item = items [i];
             GameObject spawn = GameObject.Instantiate (item);
             spawn.transform.position = transform.position + 3 * Vector3.up;
             Rigidbody rigid = spawn.GetComponent<Rigidbody> ();
             rigid.velocity = dir * Random.Range (minThrowScale, maxThrowScale);
-            dropItems.Add (spawn.transform);
+            dropItems[i] = spawn;
+            dropItemList.Add (spawn);
+            isDropped [i] = true;
         }
     }
 
     void OnCollisionEnter(Collision collision) {
-        if (dropItems.Count == 0 || collision.gameObject.tag != "Item")
+        if (dropItemList.Count == 0 || collision.gameObject.tag != "Item")
             return;
-        foreach (Transform item in new List<Transform>(dropItems)) {
-            if (collision.transform == item.transform) {
-                dropItems.Remove (collision.transform);
-                Destroy (collision.transform.gameObject);
-                return;
+        for (int i = 0; i < items.Length; i++) {
+            if (dropItems [i] == null)
+                continue;
+            if (collision.transform == dropItems [i].transform) {
+                isDropped [i] = false;
+                dropItemList.Remove (dropItems[i]);
+                Destroy (dropItems [i]);
+                dropItems [i] = null;
+                break;
             }
         }
     }
