@@ -19,4 +19,13 @@ EditorBuildSettings:
     guid: 7382d99351198424884d7146e7b2d00e
   - enabled: 1
     path: Assets/Scenes/Steal.unity
+    guid: 87870802327bad3489fdc15280c38e28
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 394ebe16db72b8e469a9fde606de1177
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 272b760dc476dac478e35e96f12e9e3f
+  - enabled: 0
+    path: Assets/Scenes/Test2.unity
     guid: b320a663700669e42bf5931c6554c62d

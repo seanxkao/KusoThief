@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Target : MonoBehaviour {
@@ -10,6 +11,8 @@ public class Target : MonoBehaviour {
     [SerializeField] private float minVelocity;
     [SerializeField] private float velocityScale;
     [SerializeField] private GameObject[] items;
+    private bool isRandomMove = true;
+    private NavMeshAgent agent;
     private bool[] isDropped;
     private GameObject[] dropItems;
     private List<GameObject> dropItemList;
@@ -19,7 +22,8 @@ public class Target : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () { 
+	void Start () {
+        agent = this.GetComponent<NavMeshAgent>();
         dropItems = new GameObject[items.Length];
         isDropped = new bool[items.Length];
         dropItemList = new List<GameObject> ();
@@ -34,9 +38,13 @@ public class Target : MonoBehaviour {
             Vector3 dir = dropItemList [0].transform.position - transform.position;
             dir = dir.normalized * Mathf.Max (dir.magnitude, minVelocity);
             GetComponent<Rigidbody> ().velocity = dir + dir * (dir.magnitude - minVelocity) * velocityScale;
+            isRandomMove = true;
         }
         else {
-            GetComponent<Rigidbody> ().velocity = Vector3.zero;
+            //GetComponent<Rigidbody> ().velocity = Vector3.zero;
+            if (isRandomMove) {
+                StartCoroutine(RandomMove());
+            }
         }
 	}
 
@@ -71,4 +79,16 @@ public class Target : MonoBehaviour {
             }
         }
     }
+
+    private IEnumerator RandomMove () {
+        isRandomMove = false;
+        Vector3 goal = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
+        agent.SetDestination(goal);
+        while (Vector3.Magnitude(transform.position - goal) >= 0.5f) {
+            yield return null;
+        }
+        isRandomMove = true;
+        yield break;
+    }
+
 }
