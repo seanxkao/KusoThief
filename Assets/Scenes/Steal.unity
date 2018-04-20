@@ -17095,7 +17095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPositions: {fileID: 1634689566}
-  minItemLen: 2
+  minItemLen: 3
   maxItemLen: 3
 --- !u!4 &1465992595
 Transform:
