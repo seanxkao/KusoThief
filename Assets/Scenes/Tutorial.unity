@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989753033
 GameObject:
@@ -518,7 +518,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 61
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -529,78 +529,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u904A\u6232\u8AAA\u660E\uFF1A\r\n\u4E0D\u6697\u6BBA\u3001\u4E0D\u884C\u6436\u3001\u4E0D\u884C\u7ACA\uFF0C\u7DE3\u5206\u5230\u4E86\uFF0C\u8D13\u7269\u81EA\u7136\u6703\u5230\u624B\u3002\r\n\u904A\u6232\u5206\u6210\u5169\u500B\u968E\u6BB5\uFF1A\u7B2C\u4E00\u968E\u6BB5\u7D2F\u7A4D\u7DE3\u5206\u3001\u7B2C\u4E8C\u968E\u6BB5\u5077\u6771\u897F\u3002\r\n\r\n\u7B2C\u4E00\u968E\u6BB5\u8981\u6276\u8001\u592A\u592A\u904E\u99AC\u8DEF\uFF0C\u7D2F\u7A4D\u7DE3\u5206\u503C\u3002\r\n\u4F7F\u7528\u65B9\u5411\u9375\u79FB\u52D5\u53EF\u611B\u7684Unity\u91AC\uFF0C\u6309\u4F4FZ\u9375\u53EF\u4EE5\u6276\u8001\u592A\u592A\u3002\r\n\u6210\u529F\u5C07\u8001\u592A\u592A\u6276\u5230\u99AC\u8DEF\u5C0D\u9762\u5247\u7372\u5F97\u7DE3\u4EFD\u9EDE\u6578\uFF0C\u8D8A\u9AD8\u7684\u7DE3\u5206\u9EDE\u6578\u53EF\u4EE5\u5728\u7B2C\u4E8C\u95DC\u767C\u52D5\u8D8A\u5F37\u529B\u7684\u6280\u80FD\u3002\r\n\u4E0D\u904E\u8981\u5C0F\u5FC3\u99AC\u8DEF\u5982\u864E\u53E3\uFF0C\u8001\u5976\u5976\u88AB\u8ECA\u649E\u6B7B\u7DE3\u4EFD\u9EDE\u6578\u6703\u5012\u6263\u3002\r\n\u9806\u5E36\u4E00\u63D0\uFF0CUnity\u91AC\u88AB\u8ECA\u649E\u4E5F\u4E0D\u6703\u6709\u4E8B\uFF0C\u56E0\u70BA\u5979\u5F88\u53EF\u611B<3"
+  m_Text: "\u904A\u6232\u8AAA\u660E\uFF1A\r\n\u4E0D\u6697\u6BBA\u3001\u4E0D\u884C\u6436\u3001\u4E0D\u884C\u7ACA\uFF0C\u7DE3\u5206\u5230\u4E86\uFF0C\u8D13\u7269\u81EA\u7136\u6703\u5230\u624B\u3002\r\n\u904A\u6232\u5206\u6210\u5169\u500B\u968E\u6BB5\uFF1A\u7B2C\u4E00\u968E\u6BB5\u7D2F\u7A4D\u7DE3\u5206\u3001\u7B2C\u4E8C\u968E\u6BB5\u5077\u6771\u897F\u3002\r\n\r\n\u7B2C\u4E00\u968E\u6BB5\u8981\u6276\u8001\u592A\u592A\u904E\u99AC\u8DEF\uFF0C\u7D2F\u7A4D\u7DE3\u5206\u503C\u3002\r\n\u4F7F\u7528\u65B9\u5411\u9375\u79FB\u52D5\u53EF\u611B\u7684Unity\u91AC\uFF0C\u6309\u4E0BZ\u9375\u53EF\u4EE5\u6276/\u653E\u8001\u592A\u592A\u3002\r\n\u6210\u529F\u5C07\u8001\u592A\u592A\u6276\u5230\u99AC\u8DEF\u5C0D\u9762\u5247\u7372\u5F97\u7DE3\u4EFD\u9EDE\u6578\uFF0C\u8D8A\u9AD8\u7684\u7DE3\u5206\u9EDE\u6578\u53EF\u4EE5\u5728\u7B2C\u4E8C\u95DC\u767C\u52D5\u8D8A\u5F37\u529B\u7684\u6280\u80FD\u3002\r\n\u4E0D\u904E\u8981\u5C0F\u5FC3\u99AC\u8DEF\u5982\u864E\u53E3\uFF0C\u8001\u592A\u592A\u88AB\u8ECA\u649E\u6B7B\u7DE3\u4EFD\u9EDE\u6578\u6703\u5012\u6263\u3002\r\n\u9806\u5E36\u4E00\u63D0\uFF0CUnity\u91AC\u88AB\u8ECA\u649E\u4E5F\u4E0D\u6703\u6709\u4E8B\uFF0C\u56E0\u70BA\u5979\u5F88\u53EF\u611B<3"
 --- !u!222 &989753036
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 989753033}
---- !u!1 &1322659863
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1322659865}
-  - component: {fileID: 1322659864}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1322659864
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1322659863}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1322659865
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1322659863}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1486167058
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +624,7 @@ RectTransform:
   - {fileID: 989753034}
   - {fileID: 113932316}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
