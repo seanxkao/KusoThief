@@ -5,21 +5,24 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Item : MonoBehaviour {
 
+    public bool isPickup;
     public int ID;
     [SerializeField] private Sprite img;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnEnable () {
+        //Debug.Log("On");
+        isPickup = false;
+        StartCoroutine(CountDownIsPickup());
+    }
 
     public Sprite getImage() {
         return img;
+    }
+
+    private IEnumerator CountDownIsPickup () {
+        yield return new WaitForSeconds(3f);
+        isPickup = true;
+        yield break;
     }
 
 }
