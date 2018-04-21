@@ -9750,7 +9750,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 916568256}
     m_EventID: 1532808375
-  m_CachedInstanceID: 380688
+  m_CachedInstanceID: 24442
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -9798,8 +9798,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1fea949ca16274adb8e4a6a9b673d938, type: 3}
     m_IntValue: 03000000000000000100000004000000000000003581212d0000000018000000000000003581212d000000000100000000000000010000000f0000000000000037e686381000000000000000a8f0cd2637e6863837e6863837e686380600000000000000a8f0cd26010000000200000000000000010000000a0000000000000005000000000000000b0000000000000017eeb840070000000000000037e68638c328b76b00000000080000000000000037e686383581212d12000000000000001100000014000000150000001600000017000000110000000000000014000000000000001500000000000000160000000000000017000000000000001b000000000000001d0000001e0000001c0000001d000000000000001e000000000000001c000000000000000900000000000000a8f0cd2637e6863837e6863837e686381300000000000000190000000000000037e6863800100000967108471a00000000000000967108470e00000000000000a8f0cd26000000000d000000000000000c00000000000000b7cc5c5b
     m_FloatValue:
-    - 7.5
-    - 1
+    - 8
+    - 1.5
     - 0
     - 0
     - 0.5
@@ -10136,7 +10136,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 916568256}
     m_EventID: 1532808375
-  m_CachedInstanceID: 380690
+  m_CachedInstanceID: 24444
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -10281,7 +10281,7 @@ MonoBehaviour:
   m_Transitions:
   - m_Destination: {fileID: 916568256}
     m_EventID: 1532808375
-  m_CachedInstanceID: 380692
+  m_CachedInstanceID: 24446
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -10389,7 +10389,7 @@ MonoBehaviour:
     m_EventID: 1887889066
   - m_Destination: {fileID: 916568254}
     m_EventID: 1176646781
-  m_CachedInstanceID: 380694
+  m_CachedInstanceID: 24448
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 0
@@ -10502,7 +10502,7 @@ MonoBehaviour:
   m_HideScript: 1
   m_Position: {x: 20, y: 160}
   m_Transitions: []
-  m_CachedInstanceID: 380696
+  m_CachedInstanceID: 24450
   m_Description: 
   m_IgnoreTimeScale: 0
   m_ResetStatusOnDisable: 1
@@ -11248,6 +11248,47 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011390663880, guid: ef160ea432de1e8478029944626df829,
     type: 2}
   m_PrefabInternal: {fileID: 1743724158}
+--- !u!1 &962473445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 962473446}
+  - component: {fileID: 962473447}
+  m_Layer: 0
+  m_Name: Wall (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &962473446
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962473445}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30, y: 16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1951827454}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &962473447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962473445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 125, y: 5, z: 125}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &964743061
 Prefab:
   m_ObjectHideFlags: 0
@@ -24002,6 +24043,7 @@ Transform:
   - {fileID: 1752719475}
   - {fileID: 221289632}
   - {fileID: 1469273799}
+  - {fileID: 962473446}
   m_Father: {fileID: 1892563357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
